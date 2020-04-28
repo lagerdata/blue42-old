@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: unity_test
+# Project: blue42
 # Configurations: 
 # =============================================================================
 
@@ -51,83 +51,6 @@ build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
   restat = 1
 
 build edit_cache: phony CMakeFiles/edit_cache.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/CMakeLists.txt
-# =============================================================================
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build app/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app && /usr/local/Cellar/cmake/3.17.1/bin/cmake --regenerate-during-build -S/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42 -B/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build app/rebuild_cache: phony app/CMakeFiles/rebuild_cache.util
-
-
-#############################################
-# Utility command for edit_cache
-
-build app/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build app/edit_cache: phony app/CMakeFiles/edit_cache.util
-
-# =============================================================================
-# Object build statements for EXECUTABLE target blue42
-
-
-#############################################
-# Order-only phony target for blue42
-
-build cmake_object_order_depends_target_blue42_: phony || cmake_object_order_depends_target_system_
-
-build app/CMakeFiles/blue42.dir/src/main.c.o: C_COMPILER__blue42_ ../app/src/main.c || cmake_object_order_depends_target_blue42_
-  DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
-  DEP_FILE = app/CMakeFiles/blue42.dir/src/main.c.o.d
-  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
-  INCLUDES = -I../app/include -I. -I../libraries/system/include
-  OBJECT_DIR = app/CMakeFiles/blue42.dir
-  OBJECT_FILE_DIR = app/CMakeFiles/blue42.dir/src
-  TARGET_COMPILE_PDB = app/CMakeFiles/blue42.dir/
-  TARGET_PDB = app/blue42.pdb
-
-build app/CMakeFiles/blue42.dir/src/gcc_startup_nrf52840.S.o: ASM_COMPILER__blue42_ ../app/src/gcc_startup_nrf52840.S || cmake_object_order_depends_target_blue42_
-  DEFINES = -DFLOAT_ABI_HARD -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT -D__HEAP_SIZE=8192 -D__STACK_SIZE=8192
-  DEP_FILE = app/CMakeFiles/blue42.dir/src/gcc_startup_nrf52840.S.o.d
-  FLAGS = -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -x assembler-with-cpp
-  INCLUDES = -I../app/include -I. -I../libraries/system/include
-  OBJECT_DIR = app/CMakeFiles/blue42.dir
-  OBJECT_FILE_DIR = app/CMakeFiles/blue42.dir/src
-  TARGET_COMPILE_PDB = app/CMakeFiles/blue42.dir/
-  TARGET_PDB = app/blue42.pdb
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target blue42
-
-
-#############################################
-# Link the executable app/blue42
-
-build app/blue42: C_EXECUTABLE_LINKER__blue42_ app/CMakeFiles/blue42.dir/src/main.c.o app/CMakeFiles/blue42.dir/src/gcc_startup_nrf52840.S.o | libraries/system/libsystem.a || libraries/system/libsystem.a
-  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
-  LINK_FLAGS = -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wl,--gc-sections -lc -lm -lnosys --specs=nano.specs -Tblue42.ld
-  LINK_LIBRARIES = libraries/system/libsystem.a
-  LINK_PATH = -L/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/linker
-  OBJECT_DIR = app/CMakeFiles/blue42.dir
-  POST_BUILD = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app && /usr/local/bin/arm-none-eabi-size -B /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/blue42 && cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app && /usr/local/bin/arm-none-eabi-objcopy -O binary /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/blue42 /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/blue42.bin && cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app && /usr/local/bin/arm-none-eabi-objcopy -O ihex /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/blue42 /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/blue42.hex
-  PRE_LINK = :
-  TARGET_COMPILE_PDB = app/CMakeFiles/blue42.dir/
-  TARGET_FILE = app/blue42
-  TARGET_PDB = app/blue42.pdb
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -220,17 +143,47 @@ build libraries/system/edit_cache: phony libraries/system/CMakeFiles/edit_cache.
 #############################################
 # Order-only phony target for system
 
-build cmake_object_order_depends_target_system_: phony || libraries/system/CMakeFiles/system.dir
+build cmake_object_order_depends_target_system_: phony || cmake_object_order_depends_target_section_iter_
 
 build libraries/system/CMakeFiles/system.dir/src/system_nrf52840.c.o: C_COMPILER__system_ ../libraries/system/src/system_nrf52840.c || cmake_object_order_depends_target_system_
   DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
   DEP_FILE = libraries/system/CMakeFiles/system.dir/src/system_nrf52840.c.o.d
   FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
-  INCLUDES = -I../libraries/system/include -I../libraries/system/src
+  INCLUDES = -I../libraries/system/include -I../libraries/section_iter/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/log/include -I../libraries/log/src
   OBJECT_DIR = libraries/system/CMakeFiles/system.dir
   OBJECT_FILE_DIR = libraries/system/CMakeFiles/system.dir/src
-  TARGET_COMPILE_PDB = libraries/system/CMakeFiles/system.dir/system.pdb
-  TARGET_PDB = libraries/system/libsystem.pdb
+
+build libraries/system/CMakeFiles/system.dir/src/gcc_startup_nRF52840.S.o: ASM_COMPILER__system_ ../libraries/system/src/gcc_startup_nRF52840.S || cmake_object_order_depends_target_system_
+  DEFINES = -DFLOAT_ABI_HARD -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT -D__HEAP_SIZE=8192 -D__STACK_SIZE=8192
+  DEP_FILE = libraries/system/CMakeFiles/system.dir/src/gcc_startup_nRF52840.S.o.d
+  FLAGS = -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -x assembler-with-cpp
+  INCLUDES = -I../libraries/system/include -I../libraries/section_iter/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = libraries/system/CMakeFiles/system.dir
+  OBJECT_FILE_DIR = libraries/system/CMakeFiles/system.dir/src
+
+build libraries/system/CMakeFiles/system.dir/src/nrf_sdh_freertos.c.o: C_COMPILER__system_ ../libraries/system/src/nrf_sdh_freertos.c || cmake_object_order_depends_target_system_
+  DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = libraries/system/CMakeFiles/system.dir/src/nrf_sdh_freertos.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../libraries/system/include -I../libraries/section_iter/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = libraries/system/CMakeFiles/system.dir
+  OBJECT_FILE_DIR = libraries/system/CMakeFiles/system.dir/src
+
+build libraries/system/CMakeFiles/system.dir/src/nrf_sdh_soc.c.o: C_COMPILER__system_ ../libraries/system/src/nrf_sdh_soc.c || cmake_object_order_depends_target_system_
+  DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = libraries/system/CMakeFiles/system.dir/src/nrf_sdh_soc.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../libraries/system/include -I../libraries/section_iter/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = libraries/system/CMakeFiles/system.dir
+  OBJECT_FILE_DIR = libraries/system/CMakeFiles/system.dir/src
+
+build libraries/system/CMakeFiles/system.dir/src/nrf_sdh.c.o: C_COMPILER__system_ ../libraries/system/src/nrf_sdh.c || cmake_object_order_depends_target_system_
+  DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = libraries/system/CMakeFiles/system.dir/src/nrf_sdh.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../libraries/system/include -I../libraries/section_iter/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = libraries/system/CMakeFiles/system.dir
+  OBJECT_FILE_DIR = libraries/system/CMakeFiles/system.dir/src
 
 
 # =============================================================================
@@ -240,23 +193,579 @@ build libraries/system/CMakeFiles/system.dir/src/system_nrf52840.c.o: C_COMPILER
 #############################################
 # Link the static library libraries/system/libsystem.a
 
-build libraries/system/libsystem.a: C_STATIC_LIBRARY_LINKER__system_ libraries/system/CMakeFiles/system.dir/src/system_nrf52840.c.o
+build libraries/system/libsystem.a: C_STATIC_LIBRARY_LINKER__system_ libraries/system/CMakeFiles/system.dir/src/system_nrf52840.c.o libraries/system/CMakeFiles/system.dir/src/gcc_startup_nRF52840.S.o libraries/system/CMakeFiles/system.dir/src/nrf_sdh_freertos.c.o libraries/system/CMakeFiles/system.dir/src/nrf_sdh_soc.c.o libraries/system/CMakeFiles/system.dir/src/nrf_sdh.c.o || libraries/section_iter/libsection_iter.a
   ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
   OBJECT_DIR = libraries/system/CMakeFiles/system.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = libraries/system/CMakeFiles/system.dir/system.pdb
   TARGET_FILE = libraries/system/libsystem.a
-  TARGET_PDB = libraries/system/libsystem.pdb
+  TARGET_PDB = system.a.dbg
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/libraries/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build libraries/section_iter/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries/section_iter && /usr/local/Cellar/cmake/3.17.1/bin/cmake --regenerate-during-build -S/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42 -B/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build libraries/section_iter/rebuild_cache: phony libraries/section_iter/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build libraries/section_iter/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries/section_iter && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build libraries/section_iter/edit_cache: phony libraries/section_iter/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target section_iter
+
+
+#############################################
+# Order-only phony target for section_iter
+
+build cmake_object_order_depends_target_section_iter_: phony || cmake_object_order_depends_target_log_
+
+build libraries/section_iter/CMakeFiles/section_iter.dir/src/nrf_section_iter.c.o: C_COMPILER__section_iter_ ../libraries/section_iter/src/nrf_section_iter.c || cmake_object_order_depends_target_section_iter_
+  DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = libraries/section_iter/CMakeFiles/section_iter.dir/src/nrf_section_iter.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../libraries/section_iter/include -I../libraries/system/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = libraries/section_iter/CMakeFiles/section_iter.dir
+  OBJECT_FILE_DIR = libraries/section_iter/CMakeFiles/section_iter.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target section_iter
+
+
+#############################################
+# Link the static library libraries/section_iter/libsection_iter.a
+
+build libraries/section_iter/libsection_iter.a: C_STATIC_LIBRARY_LINKER__section_iter_ libraries/section_iter/CMakeFiles/section_iter.dir/src/nrf_section_iter.c.o || libraries/log/liblog.a
+  ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+  OBJECT_DIR = libraries/section_iter/CMakeFiles/section_iter.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = libraries/section_iter/libsection_iter.a
+  TARGET_PDB = section_iter.a.dbg
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/libraries/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build libraries/log/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries/log && /usr/local/Cellar/cmake/3.17.1/bin/cmake --regenerate-during-build -S/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42 -B/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build libraries/log/rebuild_cache: phony libraries/log/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build libraries/log/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries/log && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build libraries/log/edit_cache: phony libraries/log/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target log
+
+
+#############################################
+# Order-only phony target for log
+
+build cmake_object_order_depends_target_log_: phony || cmake_object_order_depends_target_freertos_
+
+build libraries/log/CMakeFiles/log.dir/src/nrf_log_backend_flash.c.o: C_COMPILER__log_ ../libraries/log/src/nrf_log_backend_flash.c || cmake_object_order_depends_target_log_
+  DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = libraries/log/CMakeFiles/log.dir/src/nrf_log_backend_flash.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../libraries/log/include -I../libraries/log/src -I../libraries/system/include -I../libraries/section_iter/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F
+  OBJECT_DIR = libraries/log/CMakeFiles/log.dir
+  OBJECT_FILE_DIR = libraries/log/CMakeFiles/log.dir/src
+
+build libraries/log/CMakeFiles/log.dir/src/nrf_log_backend_rtt.c.o: C_COMPILER__log_ ../libraries/log/src/nrf_log_backend_rtt.c || cmake_object_order_depends_target_log_
+  DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = libraries/log/CMakeFiles/log.dir/src/nrf_log_backend_rtt.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../libraries/log/include -I../libraries/log/src -I../libraries/system/include -I../libraries/section_iter/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F
+  OBJECT_DIR = libraries/log/CMakeFiles/log.dir
+  OBJECT_FILE_DIR = libraries/log/CMakeFiles/log.dir/src
+
+build libraries/log/CMakeFiles/log.dir/src/nrf_log_backend_serial.c.o: C_COMPILER__log_ ../libraries/log/src/nrf_log_backend_serial.c || cmake_object_order_depends_target_log_
+  DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = libraries/log/CMakeFiles/log.dir/src/nrf_log_backend_serial.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../libraries/log/include -I../libraries/log/src -I../libraries/system/include -I../libraries/section_iter/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F
+  OBJECT_DIR = libraries/log/CMakeFiles/log.dir
+  OBJECT_FILE_DIR = libraries/log/CMakeFiles/log.dir/src
+
+build libraries/log/CMakeFiles/log.dir/src/nrf_log_backend_uart.c.o: C_COMPILER__log_ ../libraries/log/src/nrf_log_backend_uart.c || cmake_object_order_depends_target_log_
+  DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = libraries/log/CMakeFiles/log.dir/src/nrf_log_backend_uart.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../libraries/log/include -I../libraries/log/src -I../libraries/system/include -I../libraries/section_iter/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F
+  OBJECT_DIR = libraries/log/CMakeFiles/log.dir
+  OBJECT_FILE_DIR = libraries/log/CMakeFiles/log.dir/src
+
+build libraries/log/CMakeFiles/log.dir/src/nrf_log_default_backends.c.o: C_COMPILER__log_ ../libraries/log/src/nrf_log_default_backends.c || cmake_object_order_depends_target_log_
+  DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = libraries/log/CMakeFiles/log.dir/src/nrf_log_default_backends.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../libraries/log/include -I../libraries/log/src -I../libraries/system/include -I../libraries/section_iter/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F
+  OBJECT_DIR = libraries/log/CMakeFiles/log.dir
+  OBJECT_FILE_DIR = libraries/log/CMakeFiles/log.dir/src
+
+build libraries/log/CMakeFiles/log.dir/src/nrf_log_frontend.c.o: C_COMPILER__log_ ../libraries/log/src/nrf_log_frontend.c || cmake_object_order_depends_target_log_
+  DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = libraries/log/CMakeFiles/log.dir/src/nrf_log_frontend.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../libraries/log/include -I../libraries/log/src -I../libraries/system/include -I../libraries/section_iter/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F
+  OBJECT_DIR = libraries/log/CMakeFiles/log.dir
+  OBJECT_FILE_DIR = libraries/log/CMakeFiles/log.dir/src
+
+build libraries/log/CMakeFiles/log.dir/src/nrf_log_str_formatter.c.o: C_COMPILER__log_ ../libraries/log/src/nrf_log_str_formatter.c || cmake_object_order_depends_target_log_
+  DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = libraries/log/CMakeFiles/log.dir/src/nrf_log_str_formatter.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../libraries/log/include -I../libraries/log/src -I../libraries/system/include -I../libraries/section_iter/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F
+  OBJECT_DIR = libraries/log/CMakeFiles/log.dir
+  OBJECT_FILE_DIR = libraries/log/CMakeFiles/log.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target log
+
+
+#############################################
+# Link the static library libraries/log/liblog.a
+
+build libraries/log/liblog.a: C_STATIC_LIBRARY_LINKER__log_ libraries/log/CMakeFiles/log.dir/src/nrf_log_backend_flash.c.o libraries/log/CMakeFiles/log.dir/src/nrf_log_backend_rtt.c.o libraries/log/CMakeFiles/log.dir/src/nrf_log_backend_serial.c.o libraries/log/CMakeFiles/log.dir/src/nrf_log_backend_uart.c.o libraries/log/CMakeFiles/log.dir/src/nrf_log_default_backends.c.o libraries/log/CMakeFiles/log.dir/src/nrf_log_frontend.c.o libraries/log/CMakeFiles/log.dir/src/nrf_log_str_formatter.c.o || extern/FreeRTOS/libfreertos.a
+  ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+  OBJECT_DIR = libraries/log/CMakeFiles/log.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = libraries/log/liblog.a
+  TARGET_PDB = log.a.dbg
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build extern/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/extern && /usr/local/Cellar/cmake/3.17.1/bin/cmake --regenerate-during-build -S/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42 -B/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build extern/rebuild_cache: phony extern/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build extern/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/extern && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build extern/edit_cache: phony extern/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/extern/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build extern/FreeRTOS/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/extern/FreeRTOS && /usr/local/Cellar/cmake/3.17.1/bin/cmake --regenerate-during-build -S/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42 -B/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build extern/FreeRTOS/rebuild_cache: phony extern/FreeRTOS/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build extern/FreeRTOS/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/extern/FreeRTOS && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build extern/FreeRTOS/edit_cache: phony extern/FreeRTOS/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target freertos
+
+
+#############################################
+# Order-only phony target for freertos
+
+build cmake_object_order_depends_target_freertos_: phony || extern/FreeRTOS/CMakeFiles/freertos.dir
+
+build extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/croutine.c.o: C_COMPILER__freertos_ ../extern/FreeRTOS/amazon-freertos/freertos_kernel/croutine.c || cmake_object_order_depends_target_freertos_
+  DEFINES = -DFLOAT_ABI_HARD -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/croutine.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/system/include -I../libraries/section_iter/include -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir
+  OBJECT_FILE_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel
+
+build extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/event_groups.c.o: C_COMPILER__freertos_ ../extern/FreeRTOS/amazon-freertos/freertos_kernel/event_groups.c || cmake_object_order_depends_target_freertos_
+  DEFINES = -DFLOAT_ABI_HARD -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/event_groups.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/system/include -I../libraries/section_iter/include -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir
+  OBJECT_FILE_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel
+
+build extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/list.c.o: C_COMPILER__freertos_ ../extern/FreeRTOS/amazon-freertos/freertos_kernel/list.c || cmake_object_order_depends_target_freertos_
+  DEFINES = -DFLOAT_ABI_HARD -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/list.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/system/include -I../libraries/section_iter/include -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir
+  OBJECT_FILE_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel
+
+build extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/queue.c.o: C_COMPILER__freertos_ ../extern/FreeRTOS/amazon-freertos/freertos_kernel/queue.c || cmake_object_order_depends_target_freertos_
+  DEFINES = -DFLOAT_ABI_HARD -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/queue.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/system/include -I../libraries/section_iter/include -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir
+  OBJECT_FILE_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel
+
+build extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/stream_buffer.c.o: C_COMPILER__freertos_ ../extern/FreeRTOS/amazon-freertos/freertos_kernel/stream_buffer.c || cmake_object_order_depends_target_freertos_
+  DEFINES = -DFLOAT_ABI_HARD -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/stream_buffer.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/system/include -I../libraries/section_iter/include -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir
+  OBJECT_FILE_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel
+
+build extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/tasks.c.o: C_COMPILER__freertos_ ../extern/FreeRTOS/amazon-freertos/freertos_kernel/tasks.c || cmake_object_order_depends_target_freertos_
+  DEFINES = -DFLOAT_ABI_HARD -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/tasks.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/system/include -I../libraries/section_iter/include -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir
+  OBJECT_FILE_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel
+
+build extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/timers.c.o: C_COMPILER__freertos_ ../extern/FreeRTOS/amazon-freertos/freertos_kernel/timers.c || cmake_object_order_depends_target_freertos_
+  DEFINES = -DFLOAT_ABI_HARD -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/timers.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/system/include -I../libraries/section_iter/include -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir
+  OBJECT_FILE_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel
+
+build extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.c.o: C_COMPILER__freertos_ ../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.c || cmake_object_order_depends_target_freertos_
+  DEFINES = -DFLOAT_ABI_HARD -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/system/include -I../libraries/section_iter/include -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir
+  OBJECT_FILE_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F
+
+build extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/portable/MemMang/heap_4.c.o: C_COMPILER__freertos_ ../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/MemMang/heap_4.c || cmake_object_order_depends_target_freertos_
+  DEFINES = -DFLOAT_ABI_HARD -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/portable/MemMang/heap_4.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/system/include -I../libraries/section_iter/include -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir
+  OBJECT_FILE_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/portable/MemMang
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target freertos
+
+
+#############################################
+# Link the static library extern/FreeRTOS/libfreertos.a
+
+build extern/FreeRTOS/libfreertos.a: C_STATIC_LIBRARY_LINKER__freertos_ extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/croutine.c.o extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/event_groups.c.o extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/list.c.o extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/queue.c.o extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/stream_buffer.c.o extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/tasks.c.o extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/timers.c.o extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.c.o extern/FreeRTOS/CMakeFiles/freertos.dir/amazon-freertos/freertos_kernel/portable/MemMang/heap_4.c.o
+  ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+  OBJECT_DIR = extern/FreeRTOS/CMakeFiles/freertos.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = extern/FreeRTOS/libfreertos.a
+  TARGET_PDB = freertos.a.dbg
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/extern/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build extern/unityTest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/extern/unityTest && /usr/local/Cellar/cmake/3.17.1/bin/cmake --regenerate-during-build -S/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42 -B/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build extern/unityTest/rebuild_cache: phony extern/unityTest/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build extern/unityTest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/extern/unityTest && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build extern/unityTest/edit_cache: phony extern/unityTest/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target unityTest
+
+
+#############################################
+# Order-only phony target for unityTest
+
+build cmake_object_order_depends_target_unityTest_: phony || extern/unityTest/CMakeFiles/unityTest.dir
+
+build extern/unityTest/CMakeFiles/unityTest.dir/Unity/src/unity.c.o: C_COMPILER__unityTest_ ../extern/unityTest/Unity/src/unity.c || cmake_object_order_depends_target_unityTest_
+  DEP_FILE = extern/unityTest/CMakeFiles/unityTest.dir/Unity/src/unity.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../extern/unityTest/Unity/src
+  OBJECT_DIR = extern/unityTest/CMakeFiles/unityTest.dir
+  OBJECT_FILE_DIR = extern/unityTest/CMakeFiles/unityTest.dir/Unity/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target unityTest
+
+
+#############################################
+# Link the static library extern/unityTest/libunityTest.a
+
+build extern/unityTest/libunityTest.a: C_STATIC_LIBRARY_LINKER__unityTest_ extern/unityTest/CMakeFiles/unityTest.dir/Unity/src/unity.c.o
+  ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+  OBJECT_DIR = extern/unityTest/CMakeFiles/unityTest.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = extern/unityTest/libunityTest.a
+  TARGET_PDB = unityTest.a.dbg
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build app/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app && /usr/local/Cellar/cmake/3.17.1/bin/cmake --regenerate-during-build -S/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42 -B/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build app/rebuild_cache: phony app/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build app/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build app/edit_cache: phony app/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target blue42
+
+
+#############################################
+# Order-only phony target for blue42
+
+build cmake_object_order_depends_target_blue42_: phony || cmake_object_order_depends_target_system_
+
+build app/CMakeFiles/blue42.dir/src/main.c.o: C_COMPILER__blue42_ ../app/src/main.c || cmake_object_order_depends_target_blue42_
+  DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = app/CMakeFiles/blue42.dir/src/main.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../app/include -I. -I../libraries/system/include -I../libraries/section_iter/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/log/include -I../libraries/log/src
+  OBJECT_DIR = app/CMakeFiles/blue42.dir
+  OBJECT_FILE_DIR = app/CMakeFiles/blue42.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target blue42
+
+
+#############################################
+# Link the executable app/blue42
+
+build app/blue42: C_EXECUTABLE_LINKER__blue42_ app/CMakeFiles/blue42.dir/src/main.c.o | libraries/system/libsystem.a extern/FreeRTOS/libfreertos.a libraries/section_iter/libsection_iter.a libraries/log/liblog.a libraries/system/libsystem.a extern/FreeRTOS/libfreertos.a libraries/section_iter/libsection_iter.a libraries/log/liblog.a || libraries/system/libsystem.a
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+  LINK_FLAGS = -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wl,--gc-sections -lc -lm -lnosys --specs=nano.specs -Tblue42.ld
+  LINK_LIBRARIES = libraries/system/libsystem.a  extern/FreeRTOS/libfreertos.a  libraries/section_iter/libsection_iter.a  libraries/log/liblog.a  libraries/system/libsystem.a  extern/FreeRTOS/libfreertos.a  libraries/section_iter/libsection_iter.a  libraries/log/liblog.a
+  LINK_PATH = -L/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/linker
+  OBJECT_DIR = app/CMakeFiles/blue42.dir
+  POST_BUILD = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app && /usr/local/bin/arm-none-eabi-size -B /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/blue42 && cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app && /usr/local/bin/arm-none-eabi-objcopy -O binary /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/blue42 /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/blue42.bin && cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app && /usr/local/bin/arm-none-eabi-objcopy -O ihex /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/blue42 /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/blue42.hex
+  PRE_LINK = :
+  TARGET_FILE = app/blue42
+  TARGET_PDB = blue42.dbg
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/test && /usr/local/Cellar/cmake/3.17.1/bin/cmake --regenerate-during-build -S/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42 -B/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/rebuild_cache: phony test/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/test && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/edit_cache: phony test/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/test/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/test_suite_1/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/test/test_suite_1 && /usr/local/Cellar/cmake/3.17.1/bin/cmake --regenerate-during-build -S/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42 -B/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/test_suite_1/rebuild_cache: phony test/test_suite_1/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/test_suite_1/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/test/test_suite_1 && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/test_suite_1/edit_cache: phony test/test_suite_1/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target blue42_test1
+
+
+#############################################
+# Order-only phony target for blue42_test1
+
+build cmake_object_order_depends_target_blue42_test1_: phony || cmake_object_order_depends_target_system_ cmake_object_order_depends_target_unityTest_
+
+build test/test_suite_1/CMakeFiles/blue42_test1.dir/src/main_test1.c.o: C_COMPILER__blue42_test1_ ../test/test_suite_1/src/main_test1.c || cmake_object_order_depends_target_blue42_test1_
+  DEFINES = -DFLOAT_ABI_HARD -DFREERTOS -DNRF52 -DNRF52840_XXAA -DNRF_SD_BLE_API_VERSION=6 -DS140 -DSOFTDEVICE_PRESENT
+  DEP_FILE = test/test_suite_1/CMakeFiles/blue42_test1.dir/src/main_test1.c.o.d
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+  INCLUDES = -I../test/test_suite_1/include -I. -I../libraries/system/include -I../libraries/section_iter/include -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/include -I../extern/FreeRTOS/freertos_cfg -I../extern/FreeRTOS/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F -I../libraries/log/include -I../libraries/log/src -I../extern/unityTest/Unity/src
+  OBJECT_DIR = test/test_suite_1/CMakeFiles/blue42_test1.dir
+  OBJECT_FILE_DIR = test/test_suite_1/CMakeFiles/blue42_test1.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target blue42_test1
+
+
+#############################################
+# Link the executable test/test_suite_1/blue42_test1
+
+build test/test_suite_1/blue42_test1: C_EXECUTABLE_LINKER__blue42_test1_ test/test_suite_1/CMakeFiles/blue42_test1.dir/src/main_test1.c.o | libraries/system/libsystem.a extern/FreeRTOS/libfreertos.a extern/unityTest/libunityTest.a libraries/section_iter/libsection_iter.a libraries/log/liblog.a libraries/system/libsystem.a extern/FreeRTOS/libfreertos.a libraries/section_iter/libsection_iter.a libraries/log/liblog.a || extern/unityTest/libunityTest.a libraries/system/libsystem.a
+  FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+  LINK_FLAGS = -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wl,--gc-sections -lc -lm -lnosys --specs=nano.specs -Tblue42.ld
+  LINK_LIBRARIES = libraries/system/libsystem.a  extern/FreeRTOS/libfreertos.a  extern/unityTest/libunityTest.a  libraries/section_iter/libsection_iter.a  libraries/log/liblog.a  libraries/system/libsystem.a  extern/FreeRTOS/libfreertos.a  libraries/section_iter/libsection_iter.a  libraries/log/liblog.a
+  LINK_PATH = -L/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/linker
+  OBJECT_DIR = test/test_suite_1/CMakeFiles/blue42_test1.dir
+  POST_BUILD = cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/test/test_suite_1 && /usr/local/bin/arm-none-eabi-size -B /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/test/test_suite_1/blue42_test1 && cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/test/test_suite_1 && /usr/local/bin/arm-none-eabi-objcopy -O binary /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/test/test_suite_1/blue42_test1 /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/test/test_suite_1/blue42_test1.bin && cd /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/test/test_suite_1 && /usr/local/bin/arm-none-eabi-objcopy -O ihex /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/test/test_suite_1/blue42_test1 /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/test/test_suite_1/blue42_test1.hex
+  PRE_LINK = :
+  TARGET_FILE = test/test_suite_1/blue42_test1
+  TARGET_PDB = blue42_test1.dbg
 
 # =============================================================================
 # Target aliases.
 
 build blue42: phony app/blue42
 
+build blue42_test1: phony test/test_suite_1/blue42_test1
+
+build freertos: phony extern/FreeRTOS/libfreertos.a
+
+build libfreertos.a: phony extern/FreeRTOS/libfreertos.a
+
+build liblog.a: phony libraries/log/liblog.a
+
+build libsection_iter.a: phony libraries/section_iter/libsection_iter.a
+
 build libsystem.a: phony libraries/system/libsystem.a
 
+build libunityTest.a: phony extern/unityTest/libunityTest.a
+
+build log: phony libraries/log/liblog.a
+
+build section_iter: phony libraries/section_iter/libsection_iter.a
+
 build system: phony libraries/system/libsystem.a
+
+build unityTest: phony extern/unityTest/libunityTest.a
 
 # =============================================================================
 # Folder targets.
@@ -266,7 +775,7 @@ build system: phony libraries/system/libsystem.a
 #############################################
 # Folder: /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build
 
-build all: phony app/all app/include/version/all libraries/all
+build all: phony app/include/version/all libraries/all extern/all app/all test/all
 
 # =============================================================================
 
@@ -285,9 +794,44 @@ build app/include/version/all: phony
 # =============================================================================
 
 #############################################
+# Folder: /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/extern
+
+build extern/all: phony extern/FreeRTOS/all extern/unityTest/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/extern/FreeRTOS
+
+build extern/FreeRTOS/all: phony extern/FreeRTOS/libfreertos.a
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/extern/unityTest
+
+build extern/unityTest/all: phony extern/unityTest/libunityTest.a
+
+# =============================================================================
+
+#############################################
 # Folder: /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries
 
-build libraries/all: phony libraries/system/all
+build libraries/all: phony libraries/system/all libraries/section_iter/all libraries/log/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries/log
+
+build libraries/log/all: phony libraries/log/liblog.a
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries/section_iter
+
+build libraries/section_iter/all: phony libraries/section_iter/libsection_iter.a
 
 # =============================================================================
 
@@ -297,20 +841,34 @@ build libraries/all: phony libraries/system/all
 build libraries/system/all: phony libraries/system/libsystem.a
 
 # =============================================================================
+
+#############################################
+# Folder: /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/test
+
+build test/all: phony test/test_suite_1/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/test/test_suite_1
+
+build test/test_suite_1/all: phony test/test_suite_1/blue42_test1
+
+# =============================================================================
 # Built-in targets
 
 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../app/CMakeLists.txt ../app/include/version/CMakeLists.txt ../app/include/version/version_blue42.h.in ../cmake/arm-gcc-toolchain.cmake ../cmake/utils.cmake ../libraries/CMakeLists.txt ../libraries/system/CMakeLists.txt /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeASMCompiler.cmake.in /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeASMInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCCompiler.cmake.in /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCCompilerABI.c /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCompilerIdDetection.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeDetermineASMCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeDetermineCCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeDetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeDetermineCompilerId.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeDetermineSystem.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeFindBinUtils.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeGenericSystem.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeNinjaFindMake.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeSystem.cmake.in /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeTestASMCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeTestCCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeTestCompilerCommon.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU-ASM.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU-C.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Internal/FeatureTesting.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Apple-GNU-C.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Apple-GNU.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Darwin-Initialize.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Darwin.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.17.1/CMakeASMCompiler.cmake CMakeFiles/3.17.1/CMakeCCompiler.cmake CMakeFiles/3.17.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../app/CMakeLists.txt ../app/include/version/CMakeLists.txt ../app/include/version/version_blue42.h.in ../cmake/arm-gcc-toolchain.cmake ../cmake/utils.cmake ../extern/CMakeLists.txt ../extern/FreeRTOS/CMakeLists.txt ../extern/unityTest/CMakeLists.txt ../libraries/CMakeLists.txt ../libraries/log/CMakeLists.txt ../libraries/section_iter/CMakeLists.txt ../libraries/system/CMakeLists.txt ../test/CMakeLists.txt ../test/test_suite_1/CMakeLists.txt /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeASMInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeGenericSystem.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU-ASM.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU-C.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Apple-GNU-C.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Apple-GNU.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Darwin-Initialize.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Darwin.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.17.1/CMakeASMCompiler.cmake CMakeFiles/3.17.1/CMakeCCompiler.cmake CMakeFiles/3.17.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../app/CMakeLists.txt ../app/include/version/CMakeLists.txt ../app/include/version/version_blue42.h.in ../cmake/arm-gcc-toolchain.cmake ../cmake/utils.cmake ../libraries/CMakeLists.txt ../libraries/system/CMakeLists.txt /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeASMCompiler.cmake.in /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeASMInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCCompiler.cmake.in /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCCompilerABI.c /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCompilerIdDetection.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeDetermineASMCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeDetermineCCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeDetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeDetermineCompilerId.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeDetermineSystem.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeFindBinUtils.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeGenericSystem.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeNinjaFindMake.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeSystem.cmake.in /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeTestASMCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeTestCCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeTestCompilerCommon.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU-ASM.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU-C.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Internal/FeatureTesting.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Apple-GNU-C.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Apple-GNU.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Darwin-Initialize.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Darwin.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.17.1/CMakeASMCompiler.cmake CMakeFiles/3.17.1/CMakeCCompiler.cmake CMakeFiles/3.17.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../app/CMakeLists.txt ../app/include/version/CMakeLists.txt ../app/include/version/version_blue42.h.in ../cmake/arm-gcc-toolchain.cmake ../cmake/utils.cmake ../extern/CMakeLists.txt ../extern/FreeRTOS/CMakeLists.txt ../extern/unityTest/CMakeLists.txt ../libraries/CMakeLists.txt ../libraries/log/CMakeLists.txt ../libraries/section_iter/CMakeLists.txt ../libraries/system/CMakeLists.txt ../test/CMakeLists.txt ../test/test_suite_1/CMakeLists.txt /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeASMInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeGenericSystem.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU-ASM.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU-C.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Compiler/GNU.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Apple-GNU-C.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Apple-GNU.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Darwin-Initialize.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/Darwin.cmake /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.17.1/CMakeASMCompiler.cmake CMakeFiles/3.17.1/CMakeCCompiler.cmake CMakeFiles/3.17.1/CMakeSystem.cmake: phony
 
 
 #############################################
