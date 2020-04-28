@@ -1,0 +1,6 @@
+# ninja log v5
+0	22	1588089334732352769	app/CMakeFiles/blue42.dir/src/gcc_startup_nrf52840.S.o	775253009feddf27
+0	51	1588089334761433967	app/CMakeFiles/blue42.dir/src/main.c.o	864f50cf6dc7a8c1
+0	72	1588089334782665442	libraries/system/CMakeFiles/system.dir/src/system_nrf52840.c.o	e45141bfe1983dc0
+72	97	1588089334807283000	libraries/system/libsystem.a	8f7f07e95ed7d4a
+97	143	1588089334834901847	app/blue42	74716df0099e618f

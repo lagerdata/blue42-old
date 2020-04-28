@@ -1,0 +1,6 @@
+[submodule "extern/Unity"]
+	path = extern/Unity
+	url = https://github.com/ThrowTheSwitch/Unity.git
+[submodule "extern/amazon-freertos"]
+	path = extern/amazon-freertos
+	url = git@github.com:aws/amazon-freertos.git

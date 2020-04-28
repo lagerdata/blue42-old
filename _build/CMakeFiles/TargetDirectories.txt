@@ -1,0 +1,12 @@
+/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/CMakeFiles/rebuild_cache.dir
+/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/CMakeFiles/edit_cache.dir
+/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/CMakeFiles/rebuild_cache.dir
+/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/CMakeFiles/edit_cache.dir
+/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/CMakeFiles/blue42.dir
+/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/include/version/CMakeFiles/rebuild_cache.dir
+/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/app/include/version/CMakeFiles/edit_cache.dir
+/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries/CMakeFiles/rebuild_cache.dir
+/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries/CMakeFiles/edit_cache.dir
+/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries/system/CMakeFiles/rebuild_cache.dir
+/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries/system/CMakeFiles/edit_cache.dir
+/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries/system/CMakeFiles/system.dir
