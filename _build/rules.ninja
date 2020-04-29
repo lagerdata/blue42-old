@@ -6,7 +6,7 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: blue42
+# Project: blue42_prj
 # Configurations: 
 # =============================================================================
 # =============================================================================
@@ -81,6 +81,44 @@ rule C_COMPILER__log_
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__log_
+  command = $PRE_LINK && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E rm -f $TARGET_FILE && /usr/local/bin/arm-none-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/local/bin/arm-none-eabi-ranlib $TARGET_FILE && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E touch $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__uart_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = /usr/local/bin/arm-none-eabi-gcc --sysroot=/usr/local/bin/../arm-none-eabi $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__uart_
+  command = $PRE_LINK && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E rm -f $TARGET_FILE && /usr/local/bin/arm-none-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/local/bin/arm-none-eabi-ranlib $TARGET_FILE && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E touch $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__gpio_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = /usr/local/bin/arm-none-eabi-gcc --sysroot=/usr/local/bin/../arm-none-eabi $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__gpio_
   command = $PRE_LINK && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E rm -f $TARGET_FILE && /usr/local/bin/arm-none-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/local/bin/arm-none-eabi-ranlib $TARGET_FILE && /usr/local/Cellar/cmake/3.17.1/bin/cmake -E touch $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT

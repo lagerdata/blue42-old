@@ -9,12 +9,16 @@ target_compile_options(blue42_test1 PRIVATE $<$<COMPILE_LANGUAGE:C>:-Wall -Werro
 target_compile_options(blue42_test1 PRIVATE $<$<COMPILE_LANGUAGE:ASM>:-x assembler-with-cpp>)
 
 target_compile_definitions(blue42_test1 PRIVATE FLOAT_ABI_HARD NRF52 NRF52840_XXAA NRF_SD_BLE_API_VERSION=6 S140 SOFTDEVICE_PRESENT)
-target_compile_definitions(blue42_test1 PRIVATE $<$<COMPILE_LANGUAGE:C>:FREERTOS>)
+target_compile_definitions(blue42_test1 PRIVATE $<$<COMPILE_LANGUAGE:C>:FREERTOS> UNITY_INCLUDE_CONFIG_H)
 target_compile_definitions(blue42_test1 PRIVATE $<$<COMPILE_LANGUAGE:ASM>:__HEAP_SIZE=8192 __STACK_SIZE=8192>)
+
 
 target_link_libraries(blue42_test1 system)
 target_link_libraries(blue42_test1 freertos)
 target_link_libraries(blue42_test1 unityTest)
+
+target_link_libraries(blue42_test1 uart)
+
 
 target_link_directories(blue42_test1 PRIVATE "${PROJECT_SOURCE_DIR}/linker")
 target_link_options(blue42_test1 PRIVATE -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wl,--gc-sections -lc -lm -lnosys --specs=nano.specs -Tblue42.ld)

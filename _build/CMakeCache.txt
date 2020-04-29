@@ -147,7 +147,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=blue42
+CMAKE_PROJECT_NAME:STATIC=blue42_prj
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=1.0
@@ -230,10 +230,10 @@ CMAKE_TOOLCHAIN_FILE:FILEPATH=/Users/akbardhanaliwala/Projects/Digi/vms/projects
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-blue42_BINARY_DIR:STATIC=/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build
+blue42_prj_BINARY_DIR:STATIC=/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build
 
 //Value Computed by CMake
-blue42_SOURCE_DIR:STATIC=/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42
+blue42_prj_SOURCE_DIR:STATIC=/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42
 
 
 ########################
@@ -335,7 +335,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=12
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=14
 //objcopy tool
 CMAKE_OBJCOPY:INTERNAL=/usr/local/bin/arm-none-eabi-objcopy
 //ADVANCED property for variable: CMAKE_OBJDUMP

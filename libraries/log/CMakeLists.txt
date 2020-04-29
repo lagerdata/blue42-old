@@ -20,6 +20,6 @@ target_compile_options(log PRIVATE $<$<COMPILE_LANGUAGE:C>:-Wall -Werror -g -gst
 target_compile_options(log PRIVATE $<$<COMPILE_LANGUAGE:ASM>:-x assembler-with-cpp>)
 
 
-target_compile_definitions(log PRIVATE FLOAT_ABI_HARD NRF52 NRF52840_XXAA NRF_SD_BLE_API_VERSION=6 S140 SOFTDEVICE_PRESENT)
+target_compile_definitions(log PRIVATE FLOAT_ABI_HARD NRF52840_XXAA NRF_SD_BLE_API_VERSION=6 S140 SOFTDEVICE_PRESENT)
 target_compile_definitions(log PRIVATE $<$<COMPILE_LANGUAGE:C>:FREERTOS>)
 target_compile_definitions(log PRIVATE $<$<COMPILE_LANGUAGE:ASM>:__HEAP_SIZE=8192 __STACK_SIZE=8192>)

@@ -22,23 +22,23 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 Determining if the C compiler works passed with the following output:
 Change Dir: /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/local/bin/ninja cmTC_e2ac0 && [1/2] Building C object CMakeFiles/cmTC_e2ac0.dir/testCCompiler.c.o
-[2/2] Linking C static library libcmTC_e2ac0.a
+Run Build Command(s):/usr/local/bin/ninja cmTC_eba5a && [1/2] Building C object CMakeFiles/cmTC_eba5a.dir/testCCompiler.c.o
+[2/2] Linking C static library libcmTC_eba5a.a
 
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/local/bin/ninja cmTC_77054 && [1/2] Building C object CMakeFiles/cmTC_77054.dir/CMakeCCompilerABI.c.o
+Run Build Command(s):/usr/local/bin/ninja cmTC_63855 && [1/2] Building C object CMakeFiles/cmTC_63855.dir/CMakeCCompilerABI.c.o
 Using built-in specs.
 COLLECT_GCC=/usr/local/bin/arm-none-eabi-gcc
 Target: arm-none-eabi
 Configured with: /Users/build/work/GCC-7-build/src/gcc/configure --target=arm-none-eabi --prefix=/Users/build/work/GCC-7-build/install-native --libexecdir=/Users/build/work/GCC-7-build/install-native/lib --infodir=/Users/build/work/GCC-7-build/install-native/share/doc/gcc-arm-none-eabi/info --mandir=/Users/build/work/GCC-7-build/install-native/share/doc/gcc-arm-none-eabi/man --htmldir=/Users/build/work/GCC-7-build/install-native/share/doc/gcc-arm-none-eabi/html --pdfdir=/Users/build/work/GCC-7-build/install-native/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/Users/build/work/GCC-7-build/install-native/arm-none-eabi --build=x86_64-apple-darwin10 --host=x86_64-apple-darwin10 --with-gmp=/Users/build/work/GCC-7-build/build-native/host-libs/usr --with-mpfr=/Users/build/work/GCC-7-build/build-native/host-libs/usr --with-mpc=/Users/build/work/GCC-7-build/build-native/host-libs/usr --with-isl=/Users/build/work/GCC-7-build/build-native/host-libs/usr --with-libelf=/Users/build/work/GCC-7-build/build-native/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-lstdc++ -lm' --with-pkgversion='GNU Tools for Arm Embedded Processors 7-2017-q4-major' --with-multilib-list=rmprofile
 Thread model: single
 gcc version 7.2.1 20170904 (release) [ARM/embedded-7-branch revision 255204] (GNU Tools for Arm Embedded Processors 7-2017-q4-major) 
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk' '-v' '-o' 'CMakeFiles/cmTC_77054.dir/CMakeCCompilerABI.c.o' '-c'
- /Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/cc1 -quiet -v -iprefix /Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/ -isysroot /usr/local/bin/../arm-none-eabi -D__USES_INITFINI__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -auxbase-strip CMakeFiles/cmTC_77054.dir/CMakeCCompilerABI.c.o -version -o /var/folders/qt/yjdtws357b74zm46bzx4zznc0000gn/T//ccGUKfWH.s
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk' '-v' '-o' 'CMakeFiles/cmTC_63855.dir/CMakeCCompilerABI.c.o' '-c'
+ /Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/cc1 -quiet -v -iprefix /Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/ -isysroot /usr/local/bin/../arm-none-eabi -D__USES_INITFINI__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -auxbase-strip CMakeFiles/cmTC_63855.dir/CMakeCCompilerABI.c.o -version -o /var/folders/qt/yjdtws357b74zm46bzx4zznc0000gn/T//ccRdurgA.s
 GNU C11 (GNU Tools for Arm Embedded Processors 7-2017-q4-major) version 7.2.1 20170904 (release) [ARM/embedded-7-branch revision 255204] (arm-none-eabi)
 	compiled by GNU C version 7.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.15-GMP
 
@@ -59,13 +59,13 @@ GNU C11 (GNU Tools for Arm Embedded Processors 7-2017-q4-major) version 7.2.1 20
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 8fe012534d4ddf7ecc1e7959eab98592
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk' '-v' '-o' 'CMakeFiles/cmTC_77054.dir/CMakeCCompilerABI.c.o' '-c'
- /Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/bin/as -v -meabi=5 -o CMakeFiles/cmTC_77054.dir/CMakeCCompilerABI.c.o /var/folders/qt/yjdtws357b74zm46bzx4zznc0000gn/T//ccGUKfWH.s
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk' '-v' '-o' 'CMakeFiles/cmTC_63855.dir/CMakeCCompilerABI.c.o' '-c'
+ /Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/bin/as -v -meabi=5 -o CMakeFiles/cmTC_63855.dir/CMakeCCompilerABI.c.o /var/folders/qt/yjdtws357b74zm46bzx4zznc0000gn/T//ccRdurgA.s
 GNU assembler version 2.29.51 (arm-none-eabi) using BFD version (GNU Tools for Arm Embedded Processors 7-2017-q4-major) 2.29.51.20171128
 COMPILER_PATH=/Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/:/Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/:/Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/bin/
 LIBRARY_PATH=/Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/:/Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/:/Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk' '-v' '-o' 'CMakeFiles/cmTC_77054.dir/CMakeCCompilerABI.c.o' '-c'
-[2/2] Linking C static library libcmTC_77054.a
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk' '-v' '-o' 'CMakeFiles/cmTC_63855.dir/CMakeCCompilerABI.c.o' '-c'
+[2/2] Linking C static library libcmTC_63855.a
 
 
 
@@ -88,15 +88,15 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(arm-none-eabi-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/local/bin/ninja cmTC_77054 && [1/2] Building C object CMakeFiles/cmTC_77054.dir/CMakeCCompilerABI.c.o]
+  ignore line: [Run Build Command(s):/usr/local/bin/ninja cmTC_63855 && [1/2] Building C object CMakeFiles/cmTC_63855.dir/CMakeCCompilerABI.c.o]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/local/bin/arm-none-eabi-gcc]
   ignore line: [Target: arm-none-eabi]
   ignore line: [Configured with: /Users/build/work/GCC-7-build/src/gcc/configure --target=arm-none-eabi --prefix=/Users/build/work/GCC-7-build/install-native --libexecdir=/Users/build/work/GCC-7-build/install-native/lib --infodir=/Users/build/work/GCC-7-build/install-native/share/doc/gcc-arm-none-eabi/info --mandir=/Users/build/work/GCC-7-build/install-native/share/doc/gcc-arm-none-eabi/man --htmldir=/Users/build/work/GCC-7-build/install-native/share/doc/gcc-arm-none-eabi/html --pdfdir=/Users/build/work/GCC-7-build/install-native/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/Users/build/work/GCC-7-build/install-native/arm-none-eabi --build=x86_64-apple-darwin10 --host=x86_64-apple-darwin10 --with-gmp=/Users/build/work/GCC-7-build/build-native/host-libs/usr --with-mpfr=/Users/build/work/GCC-7-build/build-native/host-libs/usr --with-mpc=/Users/build/work/GCC-7-build/build-native/host-libs/usr --with-isl=/Users/build/work/GCC-7-build/build-native/host-libs/usr --with-libelf=/Users/build/work/GCC-7-build/build-native/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-lstdc++ -lm' --with-pkgversion='GNU Tools for Arm Embedded Processors 7-2017-q4-major' --with-multilib-list=rmprofile]
   ignore line: [Thread model: single]
   ignore line: [gcc version 7.2.1 20170904 (release) [ARM/embedded-7-branch revision 255204] (GNU Tools for Arm Embedded Processors 7-2017-q4-major) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk' '-v' '-o' 'CMakeFiles/cmTC_77054.dir/CMakeCCompilerABI.c.o' '-c']
-  ignore line: [ /Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/cc1 -quiet -v -iprefix /Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/ -isysroot /usr/local/bin/../arm-none-eabi -D__USES_INITFINI__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -auxbase-strip CMakeFiles/cmTC_77054.dir/CMakeCCompilerABI.c.o -version -o /var/folders/qt/yjdtws357b74zm46bzx4zznc0000gn/T//ccGUKfWH.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk' '-v' '-o' 'CMakeFiles/cmTC_63855.dir/CMakeCCompilerABI.c.o' '-c']
+  ignore line: [ /Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/cc1 -quiet -v -iprefix /Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/ -isysroot /usr/local/bin/../arm-none-eabi -D__USES_INITFINI__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk /usr/local/Cellar/cmake/3.17.1/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -auxbase-strip CMakeFiles/cmTC_63855.dir/CMakeCCompilerABI.c.o -version -o /var/folders/qt/yjdtws357b74zm46bzx4zznc0000gn/T//ccRdurgA.s]
   ignore line: [GNU C11 (GNU Tools for Arm Embedded Processors 7-2017-q4-major) version 7.2.1 20170904 (release) [ARM/embedded-7-branch revision 255204] (arm-none-eabi)]
   ignore line: [	compiled by GNU C version 7.2.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.15-GMP]
   ignore line: []
@@ -117,13 +117,13 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 8fe012534d4ddf7ecc1e7959eab98592]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk' '-v' '-o' 'CMakeFiles/cmTC_77054.dir/CMakeCCompilerABI.c.o' '-c']
-  ignore line: [ /Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/bin/as -v -meabi=5 -o CMakeFiles/cmTC_77054.dir/CMakeCCompilerABI.c.o /var/folders/qt/yjdtws357b74zm46bzx4zznc0000gn/T//ccGUKfWH.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk' '-v' '-o' 'CMakeFiles/cmTC_63855.dir/CMakeCCompilerABI.c.o' '-c']
+  ignore line: [ /Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/bin/as -v -meabi=5 -o CMakeFiles/cmTC_63855.dir/CMakeCCompilerABI.c.o /var/folders/qt/yjdtws357b74zm46bzx4zznc0000gn/T//ccRdurgA.s]
   ignore line: [GNU assembler version 2.29.51 (arm-none-eabi) using BFD version (GNU Tools for Arm Embedded Processors 7-2017-q4-major) 2.29.51.20171128]
   ignore line: [COMPILER_PATH=/Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/:/Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/:/Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/bin/]
   ignore line: [LIBRARY_PATH=/Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/:/Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/:/Applications/ti/ccs930/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk' '-v' '-o' 'CMakeFiles/cmTC_77054.dir/CMakeCCompilerABI.c.o' '-c']
-  ignore line: [[2/2] Linking C static library libcmTC_77054.a]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk' '-v' '-o' 'CMakeFiles/cmTC_63855.dir/CMakeCCompilerABI.c.o' '-c']
+  ignore line: [[2/2] Linking C static library libcmTC_63855.a]
   ignore line: []
   ignore line: []
   implicit libs: []

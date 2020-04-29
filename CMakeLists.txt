@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 
 # set the project name and version
-project(blue42 VERSION 1.0 LANGUAGES C ASM)
+project(blue42_prj VERSION 1.0 LANGUAGES C ASM)
 
 
 

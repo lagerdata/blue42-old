@@ -47,3 +47,13 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries/log/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries/uart/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/akbardhanaliwala/Projects/Digi/vms/projects/blue42/_build/libraries/gpio/cmake_install.cmake")
+endif()
+

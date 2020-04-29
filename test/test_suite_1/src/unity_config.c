@@ -1,9 +1,9 @@
-#define _MAIN_TEST1_C_SRC
+#define _UNITY_CONFIG_C_SRC
 
 //-------------------------MODULES USED-------------------------------------
-#include <unity.h>
-#include "uart_drv.h"
+#include "uart.h"
 #include "unity_config.h"
+
 //-------------------------DEFINITIONS AND MACORS---------------------------
 
 
@@ -21,30 +21,39 @@
 
 
 //-------------------------GLOBAL VARIABLES---------------------------------
-
+static uart_hdl_t * gp_uart_hdl;
 
 
 //-------------------------EXPORTED FUNCTIONS-------------------------------
-void setUp(void) {
-    // set stuff up here
-
-}
-
-void tearDown(void) {
-    // clean stuff up here
-}
-
-
-
-
-int main(void)
+void init_putc(void)
 {
-    UNITY_BEGIN();
-    //run test 1
-    //run test 2
-
-    return UNITY_END();
+    uart_params_t uart_params;
+    uart_params.baudrate = B115200;
+    uart_params.stop_bits = STOP_BITS_1;
+    uart_params.parity = PARITY_NONE;
+    uart_params.flow_control = false;
+    uart_params.tx_pin = 6;
+    uart_params.rx_pin = 8;
+    uart_params.fp_irq_cb = NULL;
+    gp_uart_hdl = uart_drv_init(&uart_params);
 }
 
+void putc(char c)
+{
+
+    uart_drv_tx(gp_uart_hdl, &c, 1);
+}
+
+
+void flush_putc(void)
+{
+    uart_drv_unit(gp_uart_hdl);
+    init_putc();
+}
+
+void close_putc(void)
+{
+    uart_drv_unit(gp_uart_hdl);
+}
 
 //-------------------------LOCAL FUNCTIONS----------------------------------
