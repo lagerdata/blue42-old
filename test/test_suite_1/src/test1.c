@@ -1,11 +1,12 @@
-#define _MAIN_TEST1_C_SRC
+#define _TEST1_C_SRC
 
 //-------------------------MODULES USED-------------------------------------
 #include "unity.h"
-#include "test1.h"
 
 
 //-------------------------DEFINITIONS AND MACORS---------------------------
+
+
 
 //-------------------------TYPEDEFS AND STRUCTURES--------------------------
 
@@ -24,19 +25,19 @@
 
 
 //-------------------------EXPORTED FUNCTIONS-------------------------------
-
-
-
-
-
-int main(void)
+void setUp(void)
 {
-    UnityBegin("test1.c");
-    RUN_TEST(test_freertosSystickCorrectFreq);
-    //run test 2
 
-    return (UnityEnd());
 }
 
+void tearDown(void)
+{
+
+}
+
+void test_freertosSystickCorrectFreq(void)
+{
+    TEST_FAIL();
+}
 
 //-------------------------LOCAL FUNCTIONS----------------------------------

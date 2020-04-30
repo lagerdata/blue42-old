@@ -1,7 +1,7 @@
 include(../../cmake/utils.cmake)
 
 add_executable(blue42_test1 "")
-target_sources(blue42_test1 PRIVATE src/main_test1.c)
+target_sources(blue42_test1 PRIVATE src/main_test1.c src/test1.c)
 target_include_directories(blue42_test1 PRIVATE "${CMAKE_CURRENT_LIST_DIR}/include" "${PROJECT_BINARY_DIR}")
 
 target_compile_options(blue42_test1 PRIVATE -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16)
