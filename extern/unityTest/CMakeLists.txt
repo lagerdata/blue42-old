@@ -4,6 +4,8 @@ set(UNITY_SRC_DIR "${CMAKE_CURRENT_LIST_DIR}/Unity/src")
 target_sources(unityTest PRIVATE "${UNITY_SRC_DIR}/unity.c")
 
 target_include_directories(unityTest PUBLIC "${UNITY_SRC_DIR}")
+target_include_directories(unityTest PUBLIC "${UNITY_SRC_DIR}/../extras/fixture/src")
+target_include_directories(unityTest PUBLIC "${UNITY_SRC_DIR}/../extras/memory/src")
 
 
 target_compile_options(unityTest PRIVATE -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16)
