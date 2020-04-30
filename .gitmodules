@@ -1,5 +1,5 @@
-[submodule "extern/Unity"]
-	path = extern/Unity
+[submodule "extern/unityTest/Unity"]
+	path = extern/unityTest/Unity
 	url = https://github.com/ThrowTheSwitch/Unity.git
 [submodule "extern/FreeRTOS/amazon-freertos"]
 	path = extern/FreeRTOS/amazon-freertos
