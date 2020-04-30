@@ -1,9 +1,8 @@
 #define _MAIN_TEST1_C_SRC
 
 //-------------------------MODULES USED-------------------------------------
-#include <unity.h>
-#include "uart_drv.h"
-#include "unity_config.h"
+#include "unity_fixture.h"
+
 //-------------------------DEFINITIONS AND MACORS---------------------------
 
 
