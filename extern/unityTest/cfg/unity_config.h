@@ -8,10 +8,10 @@
 
 
 
-#define UNITY_OUTPUT_CHAR(a)    putc(a)
-#define UNITY_OUTPUT_START()    init_putc()
-#define UNITY_OUTPUT_FLUSH()    flush_putc()
-#define UNITY_OUTPUT_COMPLETE() close_putc()
+#define UNITY_OUTPUT_CHAR(a)    stdout_putc(a)
+#define UNITY_OUTPUT_START()    stdout_init_putc()
+#define UNITY_OUTPUT_FLUSH()    stdout_flush_putc()
+#define UNITY_OUTPUT_COMPLETE() stdout_close_putc()
 
 
 //-------------------------TYPEDEFS AND STRUCTURES--------------------------
@@ -28,10 +28,10 @@
 
 
 //-------------------------EXPORTED FUNCTIONS-------------------------------
-void int_putc(void);
-void flush_putc(void);
-void close_putc(void);
-void putc(char c);
+void stdout_init_putc(void);
+void stdout_flush_putc(void);
+void stdout_close_putc(void);
+void stdout_putc(char c);
 
 
 #endif

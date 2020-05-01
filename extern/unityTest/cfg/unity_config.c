@@ -1,7 +1,7 @@
 #define _UNITY_CONFIG_C_SRC
 
 //-------------------------MODULES USED-------------------------------------
-#include "uart.h"
+#include "uart_drv.h"
 #include "unity_config.h"
 
 //-------------------------DEFINITIONS AND MACORS---------------------------
@@ -22,10 +22,10 @@
 
 //-------------------------GLOBAL VARIABLES---------------------------------
 static uart_hdl_t * gp_uart_hdl;
-
+static char g_byte;
 
 //-------------------------EXPORTED FUNCTIONS-------------------------------
-void init_putc(void)
+void stdout_init_putc(void)
 {
     uart_params_t uart_params;
     uart_params.baudrate = B115200;
@@ -38,20 +38,21 @@ void init_putc(void)
     gp_uart_hdl = uart_drv_init(&uart_params);
 }
 
-void putc(char c)
+void stdout_putc(char c)
 {
+    g_byte = c;
 
-    uart_drv_tx(gp_uart_hdl, &c, 1);
+    uart_drv_tx(gp_uart_hdl, &g_byte, 1);
 }
 
 
-void flush_putc(void)
+void stdout_flush_putc(void)
 {
     uart_drv_unit(gp_uart_hdl);
-    init_putc();
+    stdout_init_putc();
 }
 
-void close_putc(void)
+void stdout_close_putc(void)
 {
     uart_drv_unit(gp_uart_hdl);
 }

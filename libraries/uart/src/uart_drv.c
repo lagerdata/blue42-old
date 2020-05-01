@@ -180,8 +180,9 @@ uart_hdl_t * uart_drv_init(uart_params_t const * const p_uart_params)
         nrf_gpio_cfg_input(p_uart_params->cts_pin, NRF_GPIO_PIN_NOPULL);
         nrf_gpio_pin_set(p_uart_params->rts_pin);
         nrf_gpio_cfg_output(p_uart_params->rts_pin);
+        nrf_uart_hwfc_pins_set(NRF_UART0, p_uart_params->rts_pin, p_uart_params->cts_pin);
     }
-    nrf_uart_hwfc_pins_set(NRF_UART0, p_uart_params->rts_pin, p_uart_params->cts_pin);
+
 
 
     //setup interrupts
@@ -242,6 +243,7 @@ void uart_drv_unit(uart_hdl_t * p_uart_hdl)
     nrf_uart_task_trigger(NRF_UART0, NRF_UART_TASK_STOPRX);
 
     g_uart_hdl.fp_cb = NULL;
+    g_uart_hdl.p_reg = NULL;
 }
 
 
@@ -262,10 +264,12 @@ int32_t uart_drv_tx(uart_hdl_t * p_uart_hdl, char const * const p_tx_buf, size_t
     if(NULL == g_uart_hdl.fp_cb){
         size_t const tx_buffer_length = g_uart_hdl.tx_buf_len;
         while(g_uart_hdl.tx_cnt < tx_buffer_length){
-            tx_byte();
             while(!nrf_uart_event_check(NRF_UART0, NRF_UART_EVENT_TXDRDY));
+            tx_byte();
+
 
         }
+        while (!nrf_uart_event_check(NRF_UART0, NRF_UART_EVENT_TXDRDY));
         nrf_uart_task_trigger(NRF_UART0, NRF_UART_TASK_STOPTX);
         g_uart_hdl.tx_buf_len = 0;
     }
