@@ -1,6 +1,8 @@
+### Get image ID
+    docker images
 
-### Createing binary build tree
-cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../cmake/arm-gcc-toolchain.cmake
+### Initial setup (running in vm, use image id from step 1 above)
+    docker run -it --name blue42 -v /vagrant/projects/blue42/:/app --rm IMAGE_ID /bin/bash -c "mkdir -p _build; cd _build ; cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../cmake/arm-gcc-toolchain.cmake"
 
-### Sharing folder between host and docker
-docker run -it --name [continer name] -v /path/to/host/folder:/path/to/docker/folder --rm [image name]
+### Compile (running in vm)
+    docker run -it --name blue42 -v /vagrant/projects/blue42/:/app --rm IMAGE_ID /bin/bash -c "cd _build ; cmake --build ."
