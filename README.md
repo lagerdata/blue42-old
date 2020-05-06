@@ -1,3 +1,6 @@
+### Build image
+    docker build .
+
 ### Get image ID
     docker images
 
