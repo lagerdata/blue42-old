@@ -40,4 +40,20 @@ void test_freertosSystickCorrectFreq(void)
     TEST_FAIL();
 }
 
+void test_thatSucceeds(void)
+{
+	TEST_PASS_MESSAGE("This test passed");
+}
+
+void test_succeedsWithCondition(void)
+{
+	TEST_ASSERT_EQUAL_INT(42, 42);
+}
+
+void test_failsWithCondition(void)
+{
+	TEST_ASSERT_EQUAL_INT(42, 43);
+}
+
+
 //-------------------------LOCAL FUNCTIONS----------------------------------
