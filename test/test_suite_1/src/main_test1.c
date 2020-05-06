@@ -26,9 +26,6 @@ static uart_hdl_t * gp_uart_hdl;
 //-------------------------EXPORTED FUNCTIONS-------------------------------
 
 
-
-
-
 int main(void)
 {
     uart_params_t uart_params;
@@ -48,7 +45,10 @@ int main(void)
     uart_drv_unit(gp_uart_hdl);
 
     UnityBegin("test1.c");
-    RUN_TEST(test_freertosSystickCorrectFreq);
+    DO_TEST(test_freertosSystickCorrectFreq);
+    DO_TEST(test_thatSucceeds);
+    DO_TEST(test_succeedsWithCondition);
+    DO_TEST(test_failsWithCondition);
     //run test 2
 
     UnityEnd();

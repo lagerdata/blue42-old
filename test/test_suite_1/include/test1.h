@@ -6,6 +6,7 @@
 
 //-------------------------DEFINITIONS AND MACORS---------------------------
 
+#define DO_TEST(name) void name(void); RUN_TEST(name);
 
 
 //-------------------------TYPEDEFS AND STRUCTURES--------------------------
@@ -22,7 +23,5 @@
 
 
 //-------------------------EXPORTED FUNCTIONS-------------------------------
-void test_freertosSystickCorrectFreq(void);
-
 
 #endif
