@@ -1,10 +1,13 @@
-### Build image
+### Install docker in vm (one time)
+    https://linuxize.com/post/how-to-install-and-use-docker-on-debian-10/
+
+### Build image (one time)
     docker build .
 
 ### Get image ID
     docker images
 
-### Initial setup (running in vm, use image id from step 1 above)
+### Initial setup (one time; running in vm, use image id from above step)
     docker run -it --name blue42 -v /vagrant/projects/blue42/:/app --rm IMAGE_ID /bin/bash -c "mkdir -p _build; cd _build ; cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../cmake/arm-gcc-toolchain.cmake"
 
 ### Compile (running in vm)
