@@ -1,3 +1,13 @@
+### Cloning
+
+This repository contains submodules (which themselves contain submodules). Use the follwoing command to clone this repo:
+
+    git clone git@github.com:lagerdata/blue42.git --recurse-submodules
+
+If you've already cloned the repo, run this command to pull submodules:
+
+    git submodule update --init --recursive
+
 ### Install docker in vm (one time)
     https://linuxize.com/post/how-to-install-and-use-docker-on-debian-10/
 
