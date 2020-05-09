@@ -6,8 +6,8 @@ steps:
 - name: build
   image: adhanali/blue42
   commands:
-  - cp -r /drone/src blue42
-  - cd blue42
+  - cp -r /drone/src /app/blue42
+  - cd /app/blue42
   - mkdir -p _build
   - cd _build
   - cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../cmake/arm-gcc-toolchain.cmake
