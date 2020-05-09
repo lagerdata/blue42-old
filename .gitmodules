@@ -3,4 +3,4 @@
 	url = https://github.com/ThrowTheSwitch/Unity.git
 [submodule "extern/FreeRTOS/amazon-freertos"]
 	path = extern/FreeRTOS/amazon-freertos
-	url = git@github.com:aws/amazon-freertos.git
+	url = https://github.com/aws/amazon-freertos.git
