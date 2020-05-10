@@ -15,7 +15,6 @@ steps:
   image: adhanali/blue42
   commands:
   - cd /drone/src
-  - sleep 60000
   - mkdir -p _build
   - cd _build
   - cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../cmake/arm-gcc-toolchain.cmake
