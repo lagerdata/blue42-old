@@ -9,13 +9,12 @@ steps:
 - name: clone
   image: alpine/git
   commands:
-  - git clone https://github.com/lagerdata/blue42.git /app --recurse-submodules
+  - git clone https://github.com/lagerdata/blue42.git /drone/src --recurse-submodules
 
 - name: build
   image: adhanali/blue42
   commands:
-  - /bin/bash
-  - cd /app
+  - cd /drone/src
   - mkdir -p _build
   - cd _build
   - cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../cmake/arm-gcc-toolchain.cmake
