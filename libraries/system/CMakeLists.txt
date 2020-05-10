@@ -1,6 +1,6 @@
 add_library(system STATIC
   src/system_nrf52840.c
-  src/gcc_startup_nRF52840.S
+  src/gcc_startup_nrf52840.S
   src/nrf_sdh_freertos.c
   src/nrf_sdh_soc.c
   src/nrf_sdh.c)
