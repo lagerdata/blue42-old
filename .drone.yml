@@ -14,6 +14,7 @@ steps:
 - name: build
   image: adhanali/blue42
   commands:
+  - sleep 60000
   - cd /drone/src
   - mkdir -p _build
   - cd _build
