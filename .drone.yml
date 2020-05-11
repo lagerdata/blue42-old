@@ -28,7 +28,7 @@ steps:
   - python3 -m zipfile -e lager.zip .
   - cd lager-cli-master
   - pip install -r requirements.txt
-  - python3 -mlager --colorize gateway flash 2 --hexfile /drone/src/_build/s140_nrf52_7.0.1_softdevice.hex --hexfile /drone/src/_build/test/test_suite_1/blue42_test1.hex --device NRF52 --interface SWD --serial 260110871
+  - python3 -mlager gateway flash 2 --hexfile /drone/src/_build/s140_nrf52_7.0.1_softdevice.hex --hexfile /drone/src/_build/test/test_suite_1/blue42_test1.hex --device NRF52 --interface SWD --serial 260110871
   environment:
     NOVERIFY: 1
     LAGER_HOST:
