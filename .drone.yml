@@ -9,7 +9,7 @@ steps:
 - name: clone
   image: alpine/git
   commands:
-  - git clone https://github.com/lagerdata/blue42.git --recurse-submodules
+  - git clone https://github.com/lagerdata/blue42.git . --recurse-submodules
 
 - name: build
   image: adhanali/blue42
