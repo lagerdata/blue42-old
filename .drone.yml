@@ -2,14 +2,14 @@ kind: pipeline
 type: docker
 name: default
 
-clone:
-  disable: true
+# clone:
+#   disable: true
 
 steps:
-- name: clone
-  image: alpine/git
-  commands:
-  - git clone https://github.com/lagerdata/blue42.git . --recurse-submodules
+# - name: clone
+#   image: alpine/git
+#   commands:
+#   - git clone https://github.com/lagerdata/blue42.git . --recurse-submodules
 
 - name: build
   image: adhanali/blue42
@@ -20,25 +20,3 @@ steps:
   - cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../cmake/arm-gcc-toolchain.cmake
   - cmake --build .
   - cp /opt/nordic/nRF5_SDK_16.0.0/components/softdevice/s140/hex/s140_nrf52_7.0.1_softdevice.hex .
-
-- name: uploader
-  image: python:3.8-slim-buster
-  commands:
-  - python3 -c "import urllib.request; urllib.request.urlretrieve('https://github.com/lagerdata/lager-cli/archive/master.zip', 'lager.zip')"
-  - python3 -m zipfile -e lager.zip .
-  - cd lager-cli-master
-  - pip install -r requirements.txt
-  - python3 -mlager gateway flash 2 --hexfile /drone/src/_build/s140_nrf52_7.0.1_softdevice.hex --hexfile /drone/src/_build/test/test_suite_1/blue42_test1.hex --device NRF52 --interface SWD --serial 260110871
-  environment:
-    NOVERIFY: 1
-    LAGER_HOST:
-      from_secret: lager_host
-    LAGER_CLIENT_ID:
-      from_secret: lager_client_id
-    LAGER_AUDIENCE: https://dev.lagerdata.app/gateway
-    LAGER_AUTH_URL: https://dev-c-cvn8kq.auth0.com/
-    LAGER_AUTH_TOKEN:
-      from_secret: lager_auth_token
-    LAGER_REFRESH_TOKEN:
-      from_secret: lager_refresh_token
-    LAGER_TOKEN_TYPE: Bearer
