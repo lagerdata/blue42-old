@@ -2,19 +2,15 @@ kind: pipeline
 type: docker
 name: default
 
-clone:
-  disable: true
-
 steps:
-- name: clone
+- name: submodules
   image: alpine/git
   commands:
-  - git clone https://github.com/lagerdata/blue42.git . --recurse-submodules
+  - git submodule update --recursive --remote
 
 - name: build
   image: adhanali/blue42
   commands:
-  - cd /drone/src
   - mkdir -p _build
   - cd _build
   - cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../cmake/arm-gcc-toolchain.cmake
