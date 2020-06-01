@@ -2,14 +2,14 @@ kind: pipeline
 type: docker
 name: default
 
-# clone:
-#   disable: true
+clone:
+  disable: true
 
 steps:
-# - name: clone
-#   image: alpine/git
-#   commands:
-#   - git clone https://github.com/lagerdata/blue42.git . --recurse-submodules
+- name: clone
+  image: alpine/git
+  commands:
+  - git clone https://github.com/lagerdata/blue42.git . --recurse-submodules
 
 - name: build
   image: adhanali/blue42
