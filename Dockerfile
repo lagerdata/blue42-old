@@ -17,6 +17,8 @@
 # docker build -t lager .
 # docker docker run --name lager_bash --rm -it lager bash
 
+#NOTE: THIS IS WILL GENERATE A VERY LARGE IMAGE (~17GB). TO REDUCE SIZE UNCOMMENT TOOLS THAT MIGHT NOT BE NECESSARY
+
 FROM ubuntu:20.04
 
 MAINTAINER Akbar Dhanaliwala <akbar@lagerdata.com>
@@ -107,7 +109,7 @@ RUN curl -fSL -A "Mozialla/4.0" -o /tmp/uniflash_sl.6.0.0.2710.run "http://softw
     && chmod a+x /tmp/uniflash_sl.6.0.0.2710.run \
     && /tmp/uniflash_sl.6.0.0.2710.run --mode unattended --unattendedmodeui none --prefix /opt/ti \
     && rm /tmp/uniflash_sl.6.0.0.2710.run
-# avoid need "./" when calling SLImagecrator
+# avoid needing "./" when calling SLImagecrator
 RUN cp /usr/local/lib/libftd2xx.so /opt/ti/simplelink/imagecreator/bin/
 
 # Don't make this an env path since currently SLImageCreator only seems to work from within the bin folder
