@@ -11,7 +11,7 @@ If you've already cloned the repo, run this command to pull submodules:
 
 ### Building
 
-## Cmake
+#### Cmake
 	docker pull lagerdata/universal-devenv  
 	
 	docker run --name [LABEL] -v /path/to/this/folder:/app --rm lagerdata/universal-devenv /bin/bash -c "mkdir -p _build;cd _build; cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../cmake/arm-gcc-toolchain.cmake"  
