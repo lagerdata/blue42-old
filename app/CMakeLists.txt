@@ -14,9 +14,9 @@ target_compile_definitions(blue42 PRIVATE FLOAT_ABI_HARD NRF52840_XXAA NRF_SD_BL
 target_compile_definitions(blue42 PRIVATE $<$<COMPILE_LANGUAGE:C>:FREERTOS>)
 target_compile_definitions(blue42 PRIVATE $<$<COMPILE_LANGUAGE:ASM>:__HEAP_SIZE=8192 __STACK_SIZE=8192>)
 
-target_link_libraries(blue42 system)
+target_link_libraries(blue42 nrf52)
 target_link_libraries(blue42 freertos)
-target_link_libraries(blue42 uart)
+
 
 target_link_directories(blue42 PRIVATE "${PROJECT_SOURCE_DIR}/linker")
 target_link_options(blue42 PRIVATE -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Wl,--gc-sections -lc -lm -lnosys --specs=nano.specs -Tblue42.ld)

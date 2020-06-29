@@ -1,8 +1,9 @@
 include(../../cmake/utils.cmake)
 
 add_executable(blue42_test1 "")
-target_sources(blue42_test1 PRIVATE src/main_test1.c src/test1.c)
-target_include_directories(blue42_test1 PRIVATE "${CMAKE_CURRENT_LIST_DIR}/include" "${PROJECT_BINARY_DIR}")
+target_sources(blue42_test1 PRIVATE ${CMAKE_CURRENT_LIST_DIR}/src/main_test1.c src/test1.c)
+target_include_directories(blue42_test1 PRIVATE ${CMAKE_CURRENT_LIST_DIR}/include ${PROJECT_BINARY_DIR})
+
 
 target_compile_options(blue42_test1 PRIVATE -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16)
 target_compile_options(blue42_test1 PRIVATE $<$<COMPILE_LANGUAGE:C>:-Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums>)
@@ -13,11 +14,10 @@ target_compile_definitions(blue42_test1 PUBLIC $<$<COMPILE_LANGUAGE:C>:FREERTOS 
 target_compile_definitions(blue42_test1 PRIVATE $<$<COMPILE_LANGUAGE:ASM>:__HEAP_SIZE=8192 __STACK_SIZE=8192>)
 
 
-target_link_libraries(blue42_test1 system)
-target_link_libraries(blue42_test1 freertos)
 target_link_libraries(blue42_test1 unityTest)
+target_link_libraries(blue42 nrf52)
 
-target_link_libraries(blue42_test1 uart)
+
 
 
 target_link_directories(blue42_test1 PRIVATE "${PROJECT_SOURCE_DIR}/linker")

@@ -1,6 +1,7 @@
-[submodule "extern/unityTest/Unity"]
-	path = extern/unityTest/Unity
-	url = https://github.com/ThrowTheSwitch/Unity.git
-[submodule "extern/FreeRTOS/amazon-freertos"]
-	path = extern/FreeRTOS/amazon-freertos
-	url = https://github.com/aws/amazon-freertos.git
+[submodule "third_party/FreeRTOS/amazon-freertos"]
+	path = third_party/FreeRTOS/amazon-freertos
+	url = git@github.com:aws/amazon-freertos.git
+
+[submodule "third_party/unityTest/Unity"]
+	path = third_party/unityTest/Unity
+	url = git@github.com:ThrowTheSwitch/Unity.git

@@ -8,6 +8,33 @@ If you've already cloned the repo, run this command to pull submodules:
 
     git submodule update --init --recursive
 
+
+### File Structure
+
+
+
+
+
+
+### Building
+
+##Cmake
+	docker pull lagerdata/universal-devenv  
+	
+	docker run --name [LABEL] -v /path/to/this/folder:/app --rm [IMAGE_ID] /bin/bash -c "mkdir -p _build;cd _build; cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../cmake/arm-gcc-toolchain.cmake"  
+
+	docker run --name [LABEL] -v /path/to/this/folder:/app --rm [IMAGE_ID] /bin/bash -c "cd _build ; cmake --build ."
+
+
+##MAKE
+	docker pull lagerdata/universal-devenv  
+
+	docker run --name [LABEL] - v /path/to/this/folder:/app --rm [IMAGE_ID] /bin/bash -c "make all"
+
+	docker run --name [LABEL] - v /path/to/this/folder:/app --rm [IMAGE_ID] /bin/bash -c "make clean"
+
+
+
 ### Install docker in vm (one time)
     https://linuxize.com/post/how-to-install-and-use-docker-on-debian-10/
 
