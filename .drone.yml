@@ -6,7 +6,7 @@ steps:
 - name: show_env
   image: adhanali/blue42
   commands:
-  - echo "foo: ${foo}"
+  - echo ${foo}
   - env
 
 - name: submodules
