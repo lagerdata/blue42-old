@@ -1,12 +1,18 @@
 #define _MPU9250_DRV_C_SRC
 
 //-------------------------MODULES USED-------------------------------------
+#include "nrfx_spi.h"
+#include "nrf_gpio.h"
 
-
-
+#include "mpu9250_drv.h"
 //-------------------------DEFINITIONS AND MACORS---------------------------
+#define SPI_INSTANCE  0
+#define BUF_LEN 8
 
-
+#define NRFX_SPI_SCK_PIN  3
+#define NRFX_SPI_MOSI_PIN 4
+#define NRFX_SPI_MISO_PIN 28
+#define NRFX_SPI_SS_PIN   29
 
 //-------------------------TYPEDEFS AND STRUCTURES--------------------------
 
@@ -21,12 +27,52 @@
 
 
 //-------------------------GLOBAL VARIABLES---------------------------------
-
+static const nrfx_spi_t g_spi = NRFX_SPI_INSTANCE(SPI_INSTANCE);
+static uint8_t g_tx_buf[BUF_LEN];
+static uint8_t g_rx_buf[BUF_LEN];
+static size_t g_tx_len = 0;
+static size_t g_rx_len = 0;
 
 
 //-------------------------EXPORTED FUNCTIONS-------------------------------
+int32_t mpu9250_drv_init(void)
+{
+    nrfx_spi_config_t spi_config;
+
+    spi_config.sck_pin = NRFX_SPI_SCK_PIN;
+    spi_config.mosi_pin = NRFX_SPI_MOSI_PIN;
+    spi_config.miso_pin = NRFX_SPI_MISO_PIN;
+    spi_config.ss_pin = NRFX_SPI_SS_PIN;
+    spi_config.irq_priority = 6;
+    spi_config.frequency = NRF_SPI_FREQ_1M;
+    spi_config.mode = NRF_SPI_MODE_3;
+    spi_config.bit_order = NRF_SPI_BIT_ORDER_MSB_FIRST;
+    int32_t ret = nrfx_spi_init(&g_spi, &spi_config, NULL, NULL);
+    if(ret){
+        return MPU9250_DRIVER_INIT_FAIL;
+    }
+
+    return MPU9250_OK;
+}
+
+int32_t mpu9250_drv_unit(void)
+{
+    nrfx_spi_uninit(&g_spi);
+    return MPU9250_OK;
+}
+
 int32_t mpu9250_drv_who_am_i(uint8_t * p_whoami)
 {
+
+    g_tx_buf[0] = 117;
+    g_tx_len = 1;
+    g_rx_len = 1;
+    nrfx_spi_xfer_desc_t xfer_desc = NRFX_SPI_XFER_TRX(g_tx_buf, g_tx_len, g_rx_buf, g_rx_len);
+    nrfx_err_t err = nrfx_spi_xfer(&g_spi, &xfer_desc, 0);
+    if(NRFX_SUCCESS != err){
+        return  MPU9250_DRIVER_READWRITE_FAIL;
+    }
+
     return MPU9250_OK;
 }
 
@@ -185,11 +231,6 @@ int32_t mpu9250_drv_set_fsync_logic_level(fsync_logic_level_e level)
     return MPU9250_OK;
 }
 
-int32_t mpu9250_drv_enable_fsync_int(bool fsync_int_en)
-{
-
-    return MPU9250_OK;
-}
 
 int32_t mpu9250_drv_enable_bypass(bool bypass_en)
 {

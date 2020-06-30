@@ -3,11 +3,14 @@
 //-------------------------MODULES USED-------------------------------------
 #include <stdint.h>
 #include <stdbool.h>
+#include <string.h>
 
 
 //-------------------------DEFINITIONS AND MACORS---------------------------
 #define MPU9250_OK 0
 #define MPU9250_ILLEGAL_VALUE -1
+#define MPU9250_DRIVER_INIT_FAIL -2
+#define MPU9250_DRIVER_READWRITE_FAIL -3
 
 
 //-------------------------TYPEDEFS AND STRUCTURES--------------------------
@@ -59,7 +62,7 @@ typedef enum lowpwr_clk{
 typedef enum int_logic_level{
     LOGIC_ACTIVE_HIGH = 0,
     LOGIC_ACTIVE_LOW = 1
-}int_logic_leve_e;
+}int_logic_level_e;
 
 typedef enum int_drv{
     DRV_PUSH_PULL = 0,
@@ -90,6 +93,9 @@ typedef enum fsync_logic_level{
 
 
 //-------------------------EXPORTED FUNCTIONS-------------------------------
+int32_t mpu9250_drv_init(void);
+int32_t mpu9250_drv_unit(void);
+
 int32_t mpu9250_drv_who_am_i(uint8_t * p_whoami);
 
 int32_t mpu9250_drv_set_sample_rate(uint32_t sample_rate_hz);
@@ -123,11 +129,11 @@ int32_t mpu9250_drv_set_pin_drv(int_drv_e drv);
 int32_t mpu9250_drv_set_latch_mode(latch_mode_e mode);
 int32_t mpu9250_drv_set_status_clear_mode(status_clear_e mode);
 int32_t mpu9250_drv_set_fsync_logic_level(fsync_logic_level_e level);
-int32_t mpu9250_drv_enable_fsync_int(bool fsync_int_en);
 int32_t mpu9250_drv_enable_bypass(bool bypass_en);
 
 int32_t mpu9250_drv_write(uint8_t reg_addr, uint8_t const * const p_write_buf, size_t len);
 int32_t mpu9250_drv_read(uint8_t reg_addr, uint8_t const * const p_read_buf, size_t len);
+
 
 
 
