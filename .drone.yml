@@ -2,17 +2,20 @@ kind: pipeline
 type: docker
 name: default
 
+clone:
+  git:
+    image: plugins/git
+    recursive: true
+    submodule_override:
+      third_party/FreeRTOS/amazon-freertos: https://github.com/aws/amazon-freertos.git
+      third_party/unityTest/Unity: https://github.com/ThrowTheSwitch/Unity.git
+
 steps:
 - name: show_env
   image: adhanali/blue42
   commands:
   - echo $foo
   - env
-
-- name: submodules
-  image: alpine/git
-  commands:
-  - git submodule update --init --recursive
 
 - name: build
   image: adhanali/blue42
