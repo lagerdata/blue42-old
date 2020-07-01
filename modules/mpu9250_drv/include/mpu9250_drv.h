@@ -108,6 +108,7 @@ int32_t mpu9250_drv_enable_gdlpf(bool dlpf_en);
 int32_t mpu9250_drv_cfg_gyro_dlpf(uint8_t dlpf_cfg);
 int32_t mpu9250_drv_set_gyro_offset(int16_t x_offs, int16_t y_offs, int16_t z_offs);
 int32_t mpu9250_drv_set_gyro_fs_sel(gyro_fs_e full_scale_dps);
+int32_t mpu9250_drv_get_gyro_fs_sel(gyro_fs_e * const p_full_scale_dps);
 int32_t mpu9250_drv_enable_gyro_self_test(bool x_self, bool y_self, bool z_self);
 int32_t mpu9250_drv_enable_fifo_gyro(bool fifo_x_en, bool fifo_y_en, bool fifo_z_en);
 

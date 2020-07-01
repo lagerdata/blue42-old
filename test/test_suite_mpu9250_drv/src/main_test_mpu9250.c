@@ -31,6 +31,8 @@ int main(void)
     UnityBegin("test_mpu9250_drv.c");
     DO_TEST(test_who_am_i_read);
     DO_TEST(test_sample_rate_divider);
+    DO_TEST(test_enabling_disabling_fifo_modes);
+    DO_TEST(test_gyro_fs_select);
 
     UnityEnd();
     while(1);

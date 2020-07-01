@@ -15,6 +15,8 @@
 #define NRFX_SPI_SS_PIN   3
 
 #define REG_SAMPLE_RATE_DIV 25
+#define REG_CONFIGURATION 26
+#define REG_GYRO_CONFIG 27
 #define REG_WHO_AM_I 117
 //-------------------------TYPEDEFS AND STRUCTURES--------------------------
 
@@ -84,12 +86,44 @@ int32_t mpu9250_drv_get_sample_rate_divider(uint8_t * const p_divider)
 
 int32_t mpu9250_drv_set_fifo_mode(fifo_mode_e mode)
 {
-    return MPU9250_OK;
+    uint8_t reg_val;
+    int32_t ret = mpu9250_drv_read(REG_CONFIGURATION, &reg_val, 1);
+    if(0 != ret){
+        return ret;
+    }
+
+    switch(mode){
+        case FIFO_OVERWRITE:{
+            reg_val &= ~0x40; //set bit6 hi
+            break;
+        }
+
+        case FIFO_NO_OVERWRITE:{
+            reg_val |= 0x40; //set bit6 low
+            break;
+        }
+        default:{
+            return MPU9250_ILLEGAL_VALUE;
+            break;
+        }
+    }
+    return mpu9250_drv_write(REG_CONFIGURATION, &reg_val, 1);
 }
 
 int32_t mpu9250_drv_get_fifo_mode(fifo_mode_e * const p_mode)
 {
-    return MPU9250_OK;
+    uint8_t reg_val = 0;
+    int32_t ret = mpu9250_drv_read(REG_CONFIGURATION, &reg_val, 1);
+    if(0 != ret){
+        return ret;
+    }
+    if(0x40 & reg_val){//check for bit 6 hi
+        *p_mode = FIFO_NO_OVERWRITE;
+    }else{
+        *p_mode = FIFO_OVERWRITE;
+    }
+
+    return ret;
 }
 
 
@@ -120,12 +154,78 @@ int32_t mpu9250_drv_set_gyro_offset(int16_t x_offs, int16_t y_offs, int16_t z_of
 
 int32_t mpu9250_drv_set_gyro_fs_sel(gyro_fs_e full_scale_dps)
 {
+    uint8_t reg_val = 0;
+    int32_t ret = mpu9250_drv_read(REG_GYRO_CONFIG, &reg_val, 1);
+    if(0 != ret){
+        return ret;
+    }
+    switch(full_scale_dps){
+        case FS_250_DPS:{
+            reg_val &= ~(0x18);
+            break;
+        }
 
-    return MPU9250_OK;
+        case FS_500_DPS:{
+            reg_val &= ~(0x18);
+            reg_val |= 0x08;
+            break;
+        }
+
+        case FS_1000_DPS:{
+            reg_val &= ~(0x18);
+            reg_val |= 0x10;
+            break;
+        }
+
+        case FS_2000_DPS:{
+            reg_val &= ~(0x18);
+            reg_val |= 0x18;
+            break;
+        }
+
+        default:{
+            return MPU9250_ILLEGAL_VALUE;
+            break;
+        }
+    }
+    return mpu9250_drv_write(REG_GYRO_CONFIG, &reg_val, 1);
+
 }
 
 int32_t mpu9250_drv_get_gyro_fs_sel(gyro_fs_e * const p_full_scale_dps)
 {
+    uint8_t reg_val = 0;
+    int32_t ret = mpu9250_drv_read(REG_GYRO_CONFIG, &reg_val, 1);
+    if(0 != ret){
+        return ret;
+    }
+
+    reg_val = (reg_val>>3) & (0x03);
+    switch(reg_val){
+        case 0:{
+            *p_full_scale_dps = FS_250_DPS;
+            break;
+        }
+
+        case 1:{
+            *p_full_scale_dps = FS_500_DPS;
+            break;
+        }
+        case 2:{
+            *p_full_scale_dps = FS_1000_DPS;
+            break;
+        }
+
+        case 3:{
+            *p_full_scale_dps = FS_2000_DPS;
+            break;
+        }
+
+        default:{
+            return MPU9250_ILLEGAL_VALUE;
+            break;
+        }
+    }
 
     return MPU9250_OK;
 }

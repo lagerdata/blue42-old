@@ -14,7 +14,7 @@ steps:
   commands:
   - git submodule update --init --recursive
 - name: show_env
-  image: adhanali/blue42
+  image: lagerdata/cortexm-devenv
   commands:
   - echo $foo
   - env
