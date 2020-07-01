@@ -2,11 +2,22 @@ kind: pipeline
 type: docker
 name: default
 
+clone:
+  git:
+    image: plugins/git
+    recursive: true
+
+
 steps:
 - name: submodules
   image: alpine/git
   commands:
   - git submodule update --init --recursive
+- name: show_env
+  image: adhanali/blue42
+  commands:
+  - echo $foo
+  - env
 
 - name: build
   image: lagerdata/cortexm-devenv
