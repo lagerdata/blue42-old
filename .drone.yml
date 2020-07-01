@@ -6,18 +6,9 @@ clone:
   git:
     image: plugins/git
     recursive: true
-    submodule_override:
-      third_party/FreeRTOS/amazon-freertos: https://github.com/aws/amazon-freertos.git
-      third_party/unityTest/Unity: https://github.com/ThrowTheSwitch/Unity.git
+
 
 steps:
-- name: submodules
-  image: plugins/git
-  recursive: true
-  submodule_override:
-    third_party/FreeRTOS/amazon-freertos: https://github.com/aws/amazon-freertos.git
-    third_party/unityTest/Unity: https://github.com/ThrowTheSwitch/Unity.git
-
 - name: show_env
   image: adhanali/blue42
   commands:
