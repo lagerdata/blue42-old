@@ -11,6 +11,7 @@
 #define MPU9250_ILLEGAL_VALUE -1
 #define MPU9250_DRIVER_INIT_FAIL -2
 #define MPU9250_DRIVER_READWRITE_FAIL -3
+#define MPU9250_BUFFER_SIZE -4
 
 
 //-------------------------TYPEDEFS AND STRUCTURES--------------------------
@@ -98,8 +99,10 @@ int32_t mpu9250_drv_unit(void);
 
 int32_t mpu9250_drv_who_am_i(uint8_t * p_whoami);
 
-int32_t mpu9250_drv_set_sample_rate(uint32_t sample_rate_hz);
+int32_t mpu9250_drv_set_sample_rate_divider(uint8_t divider);
+int32_t mpu9250_drv_get_sample_rate_divider(uint8_t * const p_divider);
 int32_t mpu9250_drv_set_fifo_mode(fifo_mode_e mode);
+int32_t mpu9250_drv_get_fifo_mode(fifo_mode_e * const p_mode);
 int32_t mpu9250_drv_set_ext_sync_location(ext_sync_e location);
 int32_t mpu9250_drv_enable_gdlpf(bool dlpf_en);
 int32_t mpu9250_drv_cfg_gyro_dlpf(uint8_t dlpf_cfg);
@@ -132,7 +135,7 @@ int32_t mpu9250_drv_set_fsync_logic_level(fsync_logic_level_e level);
 int32_t mpu9250_drv_enable_bypass(bool bypass_en);
 
 int32_t mpu9250_drv_write(uint8_t reg_addr, uint8_t const * const p_write_buf, size_t len);
-int32_t mpu9250_drv_read(uint8_t reg_addr, uint8_t const * const p_read_buf, size_t len);
+int32_t mpu9250_drv_read(uint8_t reg_addr, uint8_t * const p_read_buf, size_t len);
 
 
 

@@ -30,6 +30,7 @@ int main(void)
 {
     UnityBegin("test_mpu9250_drv.c");
     DO_TEST(test_who_am_i_read);
+    DO_TEST(test_sample_rate_divider);
 
     UnityEnd();
     while(1);
