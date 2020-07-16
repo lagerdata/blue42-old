@@ -13,7 +13,7 @@ steps:
   commands:
   - git submodule update --init --recursive
 - name: build
-  image: lagerdata/cortexm-devenv
+  image: lagerdata/cortexm-ti-devenv
   commands:
   - mkdir -p _build
   - cd _build
