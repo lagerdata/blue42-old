@@ -34,3 +34,4 @@ If you've already cloned the repo, run this command to pull submodules:
 
 ### Compile (running in vm)
     docker run -it --name blue42 -v /vagrant/projects/blue42/:/app --rm IMAGE_ID /bin/bash -c "cd _build ; cmake --build ."
+
