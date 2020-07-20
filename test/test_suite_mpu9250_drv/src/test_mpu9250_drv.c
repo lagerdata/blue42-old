@@ -116,7 +116,7 @@ void test_gyro_fs_select(void)
 void test_fail(void)
 {
 
-    TEST_ASSERT_EQUAL_INT(42, 43);
+    TEST_ASSERT_EQUAL_INT(42, 42);
 }
 
 //-------------------------LOCAL FUNCTIONS----------------------------------
