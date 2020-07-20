@@ -121,7 +121,7 @@ void test_42(void)
 
 void test_blinky(void)
 {
-    TEST_ASSERT_EQUAL_INT(1,2);
+    TEST_ASSERT_EQUAL_INT(1,1);
 }
 
 //-------------------------LOCAL FUNCTIONS----------------------------------
