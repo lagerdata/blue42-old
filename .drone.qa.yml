@@ -16,20 +16,10 @@ steps:
 - name: build
   image: lagerdata/cortexm-ti-devenv  
   commands:
-  - mkdir -p _build
-  - cd _build
-  - cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../cmake/arm-gcc-toolchain.cmake
-  - cmake --build .
+  - lager exec cmake-build
 
 - name: flash
   image: lagerdata/lager-cli
-  environment:
-    LAGER_WS_HOST: "wss://qa.lagerdata.app"
-    LAGER_HOST: "https://qa.lagerdata.app"
-    LAGER_CLIENT_ID: "1vhs3zeLISQaoS3ma1AoAKsK0ZuTyVKg"
-    LAGER_AUDIENCE: "https://qa.lagerdata.app/gateway"
-    LAGER_AUTH_URL: "https://lagerdata-qa.auth0.com/"
-    LAGER_CONFIG_FILE_NAME: ".lager.qa"
 
   commands:
   - lager connect --device nrf52 --interface ftdi --transport swd --speed 4000 --gateway 5 --force

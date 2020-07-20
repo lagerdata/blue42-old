@@ -6,4 +6,5 @@ mount_dir = /app
 shell = /bin/bash
 cmd.cmake-build = mkdir -p _build; cd _build ; cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../cmake/arm-gcc-toolchain.cmake;cmake --build .
 cmd.cmake-clean = rm -rf _build
-
+cmd.make-spis = cd third_party/nRF5_SDK_17.0.0_9d13099/examples/peripheral/spis/pca10056/blank/armgcc;make
+cmd.make-uart = cd third_party/nRF5_SDK_17.0.0_9d13099/examples/peripheral/uart/pca10056/blank/armgcc;make
