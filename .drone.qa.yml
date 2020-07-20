@@ -24,3 +24,7 @@ steps:
   commands:
   - lager connect --device nrf52 --interface ftdi --transport swd --speed 4000 --gateway 5 --force
   - lager testrun --serial-device /dev/ttyACM0 --hexfile third_party/nRF5_SDK_17.0.0_9d13099/components/softdevice/s140/hex/s140_nrf52_7.0.1_softdevice.hex --hexfile _build/test/test_suite_mpu9250_drv/blue42_test_mpu9250_drv.hex --test-runner unity --gateway 5
+
+trigger:
+  branch:
+  - master
