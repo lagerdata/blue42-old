@@ -28,3 +28,4 @@ steps:
 trigger:
   branch:
   - master
+  - Feature-*
