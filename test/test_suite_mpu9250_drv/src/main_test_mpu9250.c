@@ -33,7 +33,8 @@ int main(void)
     DO_TEST(test_sample_rate_divider);
     DO_TEST(test_enabling_disabling_fifo_modes);
     DO_TEST(test_gyro_fs_select);
-    DO_TEST(test_fail);
+    DO_TEST(test_42);
+    DO_TEST(test_blinky);
 
     UnityEnd();
     while(1);
