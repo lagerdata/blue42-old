@@ -14,12 +14,12 @@ steps:
   - git submodule update --init --recursive
 
 - name: build
-  image: lagerdata/cortexm-ti-devenv  
+  image: lagerdata/devenv-cortexm
   commands:
   - lager exec cmake-build
 
 - name: flash
-  image: lagerdata/lager-cli
+  image: lagerdata/devenv-cortexm
 
   commands:
   - lager connect --device nrf52 --interface ftdi --transport swd --speed 4000 --gateway 5 --force
